@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "53d5ccbc-f8ce-438c-b2bc-ab38a8bb877f",
+		"name": "Ejemplo posman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Body contains strings consumeIndicators\", () => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"impuesto\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,200]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string EURO is present\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"saldo\");\r",
+							"});\r",
+							"\r",
+							"tests[\"content-type header is present\"] = postman.getResponseHeader(\"content-type\");\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://54.84.190.180:8079/rest/msdxc/dxc?sueldo=500000&ahorro=1000000",
+					"protocol": "http",
+					"host": [
+						"54",
+						"84",
+						"190",
+						"180"
+					],
+					"port": "8079",
+					"path": [
+						"rest",
+						"msdxc",
+						"dxc"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "500000"
+						},
+						{
+							"key": "ahorro",
+							"value": "1000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Body contains strings consumeIndicators\", () => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"impuesto\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,200]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string EURO is present\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"saldo\");\r",
+							"});\r",
+							"\r",
+							"tests[\"content-type header is present\"] = postman.getResponseHeader(\"content-type\");\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://54.84.190.180:8079/rest/msdxc/dxc?sueldo=500000&ahorro=1000000",
+					"protocol": "http",
+					"host": [
+						"54",
+						"84",
+						"190",
+						"180"
+					],
+					"port": "8079",
+					"path": [
+						"rest",
+						"msdxc",
+						"dxc"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "500000"
+						},
+						{
+							"key": "ahorro",
+							"value": "1000000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
